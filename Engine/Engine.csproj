@@ -48,7 +48,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GameSession.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Locations\3rdStreetRevise.jpg" />
+    <Resource Include="Images\Locations\BeverlyHillsRevise.jpg" />
+    <Resource Include="Images\Locations\FreewayRevise.jpg" />
+    <Resource Include="Images\Locations\LouboutinRevise.jpg" />
+    <Resource Include="Images\Locations\SkidRowRevise.jpg" />
+    <Resource Include="Images\Locations\UCLARevise.jpg" />
+    <Resource Include="Images\Locations\VeniceBeachRevise.jpg" />
+    <Resource Include="Images\Locations\WehoRevise.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Locations\CulverCityRevise.jpg" />
   </ItemGroup>
