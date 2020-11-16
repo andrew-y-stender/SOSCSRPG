@@ -16,6 +16,7 @@ namespace Engine.Factories
             newWorld.AddLocation(0, -1, "Home", "You currently reside in Culver City", "/Engine;component/Images/Locations/CulverCityRevise.jpg");
             newWorld.AddLocation(0, 0, "Beverly Hills", "You have arrived in Beverly Hills", "/Engine;component/Images/Locations/BeverlyHillsRevise.jpg");
             newWorld.AddLocation(0, 1, "Christian Louboutin", "You have arrived at Christian Louboutin", "/Engine;component/Images/Locations/LouboutinRevise.jpg");
+            newWorld.LocationAt(0, 1).QuestsAvailableHere.Add(QuestFactory.GetQuestByID(1)); 
             newWorld.AddLocation(0, 2, "West Hollywood", "You currently arrived in Weho", "/Engine;component/Images/Locations/WehoRevise.jpg");
             newWorld.AddLocation(1, 0, "10 Freeway", "You are currently *stuck* on the 10 Freeway", "/Engine;component/Images/Locations/FreewayRevise.jpg");
             newWorld.AddLocation(2, 0, "Skid Row", "You are arrived at Skid Row", "/Engine;component/Images/Locations/SkidRowRevise.jpg");
