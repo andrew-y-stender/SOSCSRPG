@@ -33,7 +33,7 @@ namespace Engine.Factories
 
                 case 3:
                     Monster spider =
-                        new Monster("Spider", "spider.jpeg", 10, 10, 10, 3);
+                        new Monster("Spider", "spider.jpg", 10, 10, 10, 3);
 
                     AddLootItem(spider, 9005, 25);
                     AddLootItem(spider, 9006, 75);
