@@ -73,7 +73,7 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            
+
             <!-- Game Messages -->
             <Border Grid.Row="0" Grid.Column="0"
                     Grid.RowSpan="2"
@@ -89,8 +89,8 @@
                         </Style>
                     </RichTextBox.Resources>
                 </RichTextBox>
-                             
-                
+
+
             </Border>
 
             <!-- Location information -->
@@ -125,26 +125,22 @@
             <Border Grid.Row="1" Grid.Column="1"
                     BorderBrush="Gainsboro"
                     BorderThickness="1">
-
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-
                     <TextBlock Grid.Row="0"
                                HorizontalAlignment="Center"
                                Height="Auto"
                                Text="{Binding CurrentMonster.Name}" />
-
                     <Image Grid.Row="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Height="125"
                            Width="125"
                            Source="{Binding CurrentMonster.ImageName}" />
-
                     <StackPanel Grid.Row="2"
                                 Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisiblity}}"
                                 HorizontalAlignment="Center"
@@ -152,13 +148,11 @@
                         <TextBlock>Current Hit Points:</TextBlock>
                         <TextBlock Text="{Binding CurrentMonster.HitPoints}" />
                     </StackPanel>
-
                 </Grid>
-
             </Border>
-
         </Grid>
 
+        <!-- Inventory and Quests -->
         <Grid Grid.Row="2" Grid.Column="0" Background="BurlyWood">
             <TabControl>
                 <TabItem Header="Inventory">
@@ -172,9 +166,7 @@
                             <DataGridTextColumn Header="Price" 
                                                 Binding="{Binding Price}"
                                                 Width="Auto"/>
-
                         </DataGrid.Columns>
-
                     </DataGrid>
                 </TabItem>
 
@@ -189,14 +181,14 @@
                             <DataGridTextColumn Header="Done?" 
                                                 Binding="{Binding IsCompleted}"
                                                 Width="Auto"/>
-
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
-                
             </TabControl>
+
         </Grid>
 
+        <!-- Action Controls-->
         <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
 
             <Grid.RowDefinitions>
@@ -208,7 +200,34 @@
                 <ColumnDefinition Width="255"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Combat Controls -->
+            <Grid Grid.Row="0" Grid.Column="0"
+                  Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisiblity}}"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.Row="0" Grid.Column="0"
+                          ItemsSource="{Binding CurrentPlayer.Weapons}"
+                          SelectedItem="{Binding CurrentWeapon}"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="ID"/>
+
+                <Button Grid.Row="0" Grid.Column="2"
+                        Content="Use"
+                        Click="OnClick_AttackMonster"/>
+            </Grid>
+
+            <!-- Movement Controls -->
             <Grid Grid.Row="0" Grid.Column="1">
 
                 <Grid.RowDefinitions>
