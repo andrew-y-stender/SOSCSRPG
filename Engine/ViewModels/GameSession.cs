@@ -57,40 +57,20 @@ namespace Engine.ViewModels
                 }
             }
         }
-
+        
         public Weapon CurrentWeapon { get; set; }
 
-        public bool HasLocationToNorth
-        {
-            get
-            {
-                return CurrentWorld.LocationAt(CurrentLocation.XCooridnate, CurrentLocation.YCoordinate + 1) != null;
-            }
-        }
+        public bool HasLocationToNorth =>
+            CurrentWorld.LocationAt(CurrentLocation.XCooridnate, CurrentLocation.YCoordinate + 1) != null;
 
-        public bool HasLocationToWest
-        {
-            get
-            {
-                return CurrentWorld.LocationAt(CurrentLocation.XCooridnate - 1, CurrentLocation.YCoordinate) != null;
-            }
-        }
+        public bool HasLocationToEast =>
+            CurrentWorld.LocationAt(CurrentLocation.XCooridnate + 1, CurrentLocation.YCoordinate) != null;
 
-        public bool HasLocationToEast
-        {
-            get
-            {
-                return CurrentWorld.LocationAt(CurrentLocation.XCooridnate + 1, CurrentLocation.YCoordinate) != null;
-            }
-        }
+        public bool HasLocationToSouth =>
+            CurrentWorld.LocationAt(CurrentLocation.XCooridnate, CurrentLocation.YCoordinate - 1) != null;
 
-        public bool HasLocationToSouth
-        {
-            get
-            {
-                return CurrentWorld.LocationAt(CurrentLocation.XCooridnate, CurrentLocation.YCoordinate - 1) != null;
-            }
-        }
+        public bool HasLocationToWest =>
+            CurrentWorld.LocationAt(CurrentLocation.XCooridnate - 1, CurrentLocation.YCoordinate) != null;
 
         public bool HasMonster => CurrentMonster != null;
 
