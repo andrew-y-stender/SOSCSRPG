@@ -25,6 +25,8 @@ namespace Engine.Factories
                 "You have arrived at Christian Louboutin",
                 "LouboutinRevise.jpg");
 
+            newWorld.LocationAt(0, 1).TraderHere = TraderFactory.GetTraderByName("Pete the Herbalist");
+
             newWorld.LocationAt(0, 1).QuestsAvailableHere.Add(QuestFactory.GetQuestByID(1));
 
             newWorld.AddLocation(0, 2, "West Hollywood",
@@ -47,9 +49,14 @@ namespace Engine.Factories
                 "You are arrived at UCLA",
                 "UCLARevise.jpg");
 
+            newWorld.LocationAt(-1, 0).TraderHere =
+                TraderFactory.GetTraderByName("Susan");
+
             newWorld.AddLocation(-1, -1, "3rd St. Promenade",
                 "You are arrived at the 3rd St. Promenade",
                 "3rdStreetRevise.jpg");
+
+            newWorld.LocationAt(-1, -1).TraderHere = TraderFactory.GetTraderByName("Farmer Ted");
 
             newWorld.AddLocation(-2, -1, "Venice Beach",
                 "You are arrived at Venice Beach",
